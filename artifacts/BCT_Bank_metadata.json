@@ -1,0 +1,181 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"deposit()": {
+					"details": "Use `msg.value` to specify deposit amount."
+				},
+				"getBalanceOf(address)": {
+					"params": {
+						"account": "Address to query."
+					}
+				},
+				"withdraw(uint256)": {
+					"params": {
+						"amount": "Amount in wei to withdraw."
+					}
+				}
+			},
+			"title": "BCT_Bank",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"Deposit(address,uint256)": {
+					"notice": "Emitted when `account` deposits `amount` wei."
+				},
+				"Withdraw(address,uint256)": {
+					"notice": "Emitted when `account` withdraws `amount` wei."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"deposit()": {
+					"notice": "Deposit ETH into the caller's bank account balance."
+				},
+				"getBalance()": {
+					"notice": "Return the caller's balance (in wei)."
+				},
+				"getBalanceOf(address)": {
+					"notice": "Return the balance of `account` (in wei)."
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw `amount` wei from the caller's bank account."
+				}
+			},
+			"notice": "Simple bank contract where users can deposit, withdraw and check their balance. - Each Ethereum address has its own balance tracked in the contract. - Deposits can be made via `deposit()` or by sending ETH to the contract (receive/fallback). - Withdrawals send ETH back to the caller, with a safety check for sufficient balance.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bank.sol": "BCT_Bank"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bank.sol": {
+			"keccak256": "0xf8cd8401e0a2b315fdb7ec1d8c45c75e99ab5fbb52df4dd8cececaade7ef9784",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d560c3f2dc0d287f14a654e078b4cf204b1b49f5218a2d7cd4a2d8dd43a04d04",
+				"dweb:/ipfs/QmST8ENfPHzGpysn6Ra9W99S2eniTvXUDNGyXtNWzeom9D"
+			]
+		}
+	},
+	"version": 1
+}
